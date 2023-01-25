@@ -55,33 +55,55 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
 
-
+Step 1: Create module encoder and decoder.
+Step 2: Get inputs and outputs for encoders and decoders.
+Step 3: Perform "or" operation for encoder and "and" logic for decoders.
+Step 4: Perform RTL LOGIC and get waveform.
+Step-5: End the module.
 
 ### PROGRAM 
-/*
-Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+```
+'''Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
+Developed by: Mathiyazhagan.A
+RegisterNumber:  22005215
+'''
+ENCODER
 
+module EX8(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
 
+DECODER
 
+module EX8(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
 
-
+```
 
 ### RTL LOGIC  
 
 
-
-
-
-
+![enco](https://user-images.githubusercontent.com/118787327/214628999-d811377f-93a0-4392-86a7-4f6ba3a12846.png)
 
 
 ### TIMING DIGRAMS  
 
+![deco](https://user-images.githubusercontent.com/118787327/214630839-681e3672-8b0e-4e03-8f24-8a9d7b52ae3a.jpeg)
 
 
 
@@ -89,8 +111,43 @@ RegisterNumber:
 ### TRUTH TABLE 
 
 
+![truth](https://user-images.githubusercontent.com/118787327/214631475-de4fd75a-c08b-4a22-84f0-34c0085d9b3e.png)
 
 
+PROGRAM(DECODER):
+Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
+Developed by: Mathiyazhagan.A
+RegisterNumber:  22005215
 
 
-### RESULTS 
+module enc(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+
+endmodule
+
+RTL LOGIC:
+
+![decoo](https://user-images.githubusercontent.com/118787327/214632344-6d648119-0a70-4f32-892d-4431bf7af681.png)
+
+TIMING DIAGRAM:
+
+![171545245-b8c00f4e-8474-4533-8fad-755bb2704671](https://user-images.githubusercontent.com/118787327/214632541-146442ab-b507-4c32-9336-0a313fcb0329.png)
+
+
+TRUTH TABLE:
+
+![171546126-a5486670-9948-4b5d-aba6-dcad149b283b](https://user-images.githubusercontent.com/118787327/214632756-7bc15741-f78e-4c25-92c6-f41545f68dc3.png)
+
+## Results
+Thus the program to desing encoder and decoder is done.
+
+
